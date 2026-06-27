@@ -3,17 +3,110 @@
 @tailwind utilities;
 
 @layer base {
-  html { scroll-behavior: smooth; }
+  :root {
+    --background: 0 0% 4%;
+    --foreground: 0 0% 92%;
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 92%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 92%;
+    --primary: 168 76% 42%;
+    --primary-foreground: 0 0% 4%;
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 92%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 240 4% 65%;
+    --accent: 168 76% 42%;
+    --accent-foreground: 0 0% 4%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 168 76% 42%;
+    --radius: 0.625rem;
+    --sidebar-background: 0 0% 6%;
+    --sidebar-foreground: 0 0% 92%;
+    --sidebar-primary: 168 76% 42%;
+    --sidebar-primary-foreground: 0 0% 4%;
+    --sidebar-accent: 0 0% 10%;
+    --sidebar-accent-foreground: 0 0% 92%;
+    --sidebar-border: 0 0% 15%;
+    --sidebar-ring: 168 76% 42%;
+  }
+
+  .dark {
+    --background: 0 0% 4%;
+    --foreground: 0 0% 92%;
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 92%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 92%;
+    --primary: 168 76% 42%;
+    --primary-foreground: 0 0% 4%;
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 92%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 240 4% 65%;
+    --accent: 168 76% 42%;
+    --accent-foreground: 0 0% 4%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 168 76% 42%;
+    --sidebar-background: 0 0% 6%;
+    --sidebar-foreground: 0 0% 92%;
+    --sidebar-primary: 168 76% 42%;
+    --sidebar-primary-foreground: 0 0% 4%;
+    --sidebar-accent: 0 0% 10%;
+    --sidebar-accent-foreground: 0 0% 92%;
+    --sidebar-border: 0 0% 15%;
+    --sidebar-ring: 168 76% 42%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    background-color: #0A0A0A;
+    background: #0A0A0A;
     color: #EAEAEA;
     font-family: 'Inter', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-  ::selection { background: rgba(20, 184, 166, 0.3); color: #EAEAEA; }
-  ::-webkit-scrollbar { width: 6px; height: 6px; }
-  ::-webkit-scrollbar-track { background: #111111; }
-  ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
-  ::-webkit-scrollbar-thumb:hover { background: #14B8A6; }
+
+  ::selection {
+    background: rgba(20, 184, 166, 0.3);
+    color: #EAEAEA;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0A0A0A;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #14B8A6;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #0D9488;
+  }
+
+  /* Firefox scrollbar */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #14B8A6 #0A0A0A;
+  }
 }
